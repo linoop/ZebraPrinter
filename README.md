@@ -24,7 +24,7 @@ allprojects {
 
 ```gradle
 dependencies {
-	        implementation 'com.github.linoop:ZebraPrinter:1.0'
+	        implementation 'com.github.linoop:ZebraPrinter:version'
 	}
 ```
 [![](https://jitpack.io/v/linoop/ZebraPrinter.svg)](https://jitpack.io/#linoop/ZebraPrinter)
