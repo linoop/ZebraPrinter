@@ -11,6 +11,9 @@
     <color name="theme_color">#404080</color>
     <color name="colorAccent">#03DAC5</color>
 
+    <color name="button_normal_color">#333</color>
+    <color name="button_active_color">#008c6a</color>
+
     <!--Basic Colors-->
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
