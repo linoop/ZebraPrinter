@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/spacing_medium">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:text="@string/choosePrinter"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/text_dark_color"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerViewDeviceList"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+                android:layout_height="2dp"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:background="@color/colorAccentDark" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewDeviceList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                app:layout_constraintBottom_toTopOf="@+id/chooseTemplate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+                tools:itemCount="3"
+                tools:listitem="@layout/printer_item" />
+
+            <TextView
+                android:id="@+id/chooseTemplate"
+                android:layout_width="wrap_content"
+                android:text="Choose print template"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/spacing_medium"
+                app:layout_constraintBottom_toTopOf="@+id/filePathLayout"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewDeviceList"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:id="@+id/filePathLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/layoutButton"
+                app:layout_constraintTop_toBottomOf="@+id/chooseTemplate">
+
+                <EditText
+                    android:alpha=".7"
+                    android:id="@+id/filePath"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:padding="@dimen/spacing_small"
+                    android:singleLine="true"
+                    tools:text="Print template"
+                    android:drawableTint="@color/mns_dark_color"
+                    android:background="@drawable/bg_rectangle_boarder"
+                    android:drawableStart="@drawable/ic_baseline_format_align_left_24" />
+
+                <ImageView
+                    android:id="@+id/chooseFile"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:src="@drawable/ic_baseline_folder_24"
+                    android:focusable="true"
+                    app:tint="@color/mns_dark_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutButton"
+                android:layout_width="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/filePathLayout"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonClose"
+                    style="@style/ExtendedButtonRound"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_medium"
+                    android:layout_weight="1"
+                    android:text="Cancel"
+                    android:textAllCaps="false" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonOk"
+                    style="@style/ExtendedButtonRound"
+                    android:layout_width="0dp"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_medium"
+                    android:layout_weight="1"
+                    android:text="Save"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
